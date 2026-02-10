@@ -1,9 +1,31 @@
-const http = require("http");
+import express from 'express';
+import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
 
-const server = http.createServer((req, res) => {
-  res.end("Hello from Sienna’s server!");
+dotenv.config();
+
+const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Enable EJS
+app.set('view engine', 'ejs');
+
+// CONNECT TO MYSQL
+const db = await mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
 
-server.listen(3000, "0.0.0.0", () => {
+// HOME ROUTE
+app.get('/', (req, res) => {
+  res.render('index'); // this will load views/index.ejs
+});
+
+// START SERVER
+app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+
