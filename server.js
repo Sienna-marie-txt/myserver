@@ -12,12 +12,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 
 // CONNECT TO MYSQL
-const db = await mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME
-});
+const db = await mysql.createConnection(process.env.DATABASE_URL);
 
 // HOME ROUTE
 app.get('/', (req, res) => {
@@ -28,4 +23,5 @@ app.get('/', (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+
 
