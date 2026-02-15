@@ -28,7 +28,9 @@ const db = await mysql.createConnection({
   host: ${{shared.MYSQLHOST}},
   user: ${{shared.MYSQLUSER}},
   password: ${{shared.MYSQLPASSWORD}},
-  database: ${{shared.MYSQLDATABASE}}
+  database: ${{shared.MYSQLDATABASE}},
+  url: ${{shared.MYSQL_URL}}.
+  port: ${{shared.MYSQLPORT}}
 });
 
 // HOME ROUTE — Sienna’s Blog in Progress
