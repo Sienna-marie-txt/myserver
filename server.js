@@ -25,12 +25,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // CONNECT TO MYSQL using your .env variables
 const db = await mysql.createConnection({
-  host: ${{shared.MYSQLHOST}},
-  user: ${{shared.MYSQLUSER}},
-  password: ${{shared.MYSQLPASSWORD}},
-  database: ${{shared.MYSQLDATABASE}},
-  url: ${{shared.MYSQL_URL}}.
-  port: ${{shared.MYSQLPORT}}
+  host: ${{MySQL.MYSQLHOST}},
+  user: ${{MySQL.MYSQLUSER}},
+  password: ${{MySQL.MYSQLPASSWORD}},
+  database: ${{MySQL.MYSQLDATABASE}},
+  url: ${{MySQL.MYSQL_URL}}.
+  port: ${{MySQL.MYSQLPORT}}
 });
 
 // HOME ROUTE — Sienna’s Blog in Progress
