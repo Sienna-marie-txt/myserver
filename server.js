@@ -24,20 +24,26 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // CONNECT TO MYSQL using your .env variables
-const db = await mysql.createConnection({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
-  port: process.env.MYSQLPORT
-});
+async function startServer() {
+  const db = await mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+  });
 
-// HOME ROUTE — Sienna’s Blog in Progress
-app.get('/', (req, res) => {
-  res.render('index', { title: "Sienna's Blog in Progress" });
-});
+  console.log("Connected to MySQL!");
 
-// START SERVER
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
-});
+  // HOME ROUTE — Sienna’s Blog in Progress
+  app.get('/', (req, res) => {
+    res.render('index', { title: "Sienna's Blog in Progress" });
+  });
+
+  app.listen(3000, () => {
+    console.log("Server running on port 3000");
+  });
+}
+
+startServer();
+
