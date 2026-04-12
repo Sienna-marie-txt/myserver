@@ -54,5 +54,27 @@ background-size: 40px;
     font-size: 1.1rem;
     line-height: 1.5;
     color: #444;
+.projects-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #ffb6e6, #ff8acb);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(255, 140, 200, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid #ffd6f2;
 }
+
+.projects-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(255, 120, 190, 0.5);
+}
+
+.projects-button:active {
+    transform: translateY(0);
+}
+
 }
