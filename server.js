@@ -40,10 +40,63 @@ async function startServer() {
     res.render('index', { title: "Sienna's Blog in Progress" });
   });
 
+  // PROJECTS ROUTE — this is the missing part
+  app.get('/projects', (req, res) => {
+    res.render('projects', { title: "My Projects" });
+  });
+
   app.listen(3000, () => {
     console.log("Server running on port 3000");
   });
 }
 
 startServer();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
