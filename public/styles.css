@@ -18,4 +18,32 @@
         top right,
         bottom right;
     background-size: 40px;
+.page-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #ff69b4;
+}
+
+.project-card {
+    background: #ffe6f2;
+    border: 2px solid #ffb6d9;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 700px;
+    box-shadow: 0 0 10px rgba(255, 182, 219, 0.5);
+}
+
+.project-card h2 {
+    color: #ff4da6;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #444;
+}
 }
